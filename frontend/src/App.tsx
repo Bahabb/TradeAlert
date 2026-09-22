@@ -1,10 +1,10 @@
 import AlertItem from './components/AlertItem.tsx';
-
+import { mockData } from './mockData.ts';
 function App() {
 
     return(
         <div className="App">
-            <AlertItem alert={{ id: '1', timestamp: '2023-01-01 12:00:00', message: 'This is a test alert.' }} />
+            <AlertItem alert={mockData[0]} />
         </div>
     );
 
