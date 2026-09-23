@@ -1,0 +1,18 @@
+.alert-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+}
+
+.alert-feed-header {
+    display: flex;
+    justify-content: left;
+    
+}
+.alert-feed-title {
+    font-size:larger;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    margin-bottom: 10px;
+}

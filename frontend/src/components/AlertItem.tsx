@@ -1,5 +1,6 @@
 import { AlertItemType } from "../types";
 import './AlertItem.css';
+import './AlertFeed.css';
 
 interface AlertItemProps {
     alert: AlertItemType;
@@ -7,8 +8,8 @@ interface AlertItemProps {
 function AlertItem(props: AlertItemProps) {
     return (
         <div className="alert-item">
+            <p className="alert-message">{props.alert.message}</p>
             <span className="alert-timestamp">{props.alert.timestamp}</span> 
-           <p className="alert-message">{props.alert.message}</p>
         </div>
 
     );
