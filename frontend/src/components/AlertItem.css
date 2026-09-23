@@ -1,0 +1,23 @@
+
+.alert-item {
+    background-color: #0d0e2c;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.alert-timestamp {
+    color: #64748b;
+    font-size: 12px;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.alert-message {
+    color: #ffffff;
+    font-size: 14px;
+    font-family: monospace;
+    font-weight: semi-bold;
+}
