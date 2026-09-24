@@ -12,11 +12,11 @@ const io = new Server(httpServer, {
 });
 
 io.on("connection", (socket) => {  
-    console.log("Socket client connected:", socket.id); 
-    
+    console.log("Socket client connected:", socket.id);
+
     socket.on("disconnect", () => {  
     console.log("Socket client disconnected:", socket.id);
-npm });
+});
 });
 
 
