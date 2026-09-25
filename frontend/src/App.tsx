@@ -1,6 +1,5 @@
 import AlertFeed from './components/AlertFeed.tsx';
 import { AlertItemType } from './types.ts';
-import { mockData } from './mockData.ts';
 
 import { useEffect, useState } from 'react';
 import socket from './socket.tsx';
@@ -38,7 +37,7 @@ function App() {
 
             socket.on('connect_error', handleConnectError);
 
-            socket.on("backendMockAlert", handleBackendMockAlert);
+            socket.on("botAlert", handleBackendMockAlert);
 
             socket.on("disconnect", handleDisconnect);
 
@@ -47,7 +46,7 @@ function App() {
                 socket.off('connect');
                 socket.off('connect_error');
                 socket.off('disconnect');
-                socket.off("backendMockAlert", handleBackendMockAlert);
+                socket.off("botAlert", handleBackendMockAlert);
             }
     }, []);
 

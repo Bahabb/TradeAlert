@@ -15,7 +15,7 @@ const receiveAlert = (req, res) => {
     
     const io = req.app.get("io");
     if (io) {
-        io.emit("backendMockAlert", [alertData]); 
+        io.emit("botAlert", [alertData]); 
     } else {
         console.error("Socket.IO instance not found in app context. Couldn't send alert to frontend.");
     }
