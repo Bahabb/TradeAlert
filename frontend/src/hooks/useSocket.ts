@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import socket from '../socket.tsx';
+import socket from '../socket.ts';
 
 function useSocket() {
     useEffect(() => {
