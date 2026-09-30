@@ -7,7 +7,7 @@ const { port } = require("./config/env");
 const httpServer = http.createServer(app);
 const io = new Server(httpServer, {  
     cors: {    
-        origin: "http://localhost:5174",  // React app URL
+        origin: "http://localhost:5173",  // React app URL
     },
 });
 

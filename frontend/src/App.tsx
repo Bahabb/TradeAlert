@@ -9,7 +9,7 @@ function App() {
 
     return(
         <div className="App">
-            {alerts.length > 0 && <AlertFeed alerts={alerts} />}
+            {<AlertFeed alerts={alerts} />}
         </div>
     );
 
