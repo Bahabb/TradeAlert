@@ -11,12 +11,13 @@ function AlertFeed(props: AlertFeedProps) {
             <div className="alert-feed-header">
                 <h2 className="alert-feed-title">ICT Alert Feed</h2>
             </div>
-
-            {
+            {props.alerts.length === 0 ? (
+                <p className="alert-feed-empty">No alerts yet.</p>
+            ) : (
                 props.alerts.map((item) => (
                     <AlertItem key={item.id} alert={item} />
                 ))
-            }
+            )}
         </div>
     )
 }
