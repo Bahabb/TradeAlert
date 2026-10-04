@@ -1,4 +1,5 @@
 import AlertFeed from './components/AlertFeed.tsx';
+import MarketRecap from './components/MarketRecap.tsx';
 import useAlertStream from './hooks/useAlertStream.ts';
 
 
@@ -13,7 +14,7 @@ function App() {
                 {<AlertFeed alerts={alerts} />}
             </div>
             <div className="market-recap-container" style={{flex: 3, borderColor: 'white', borderStyle: 'solid', borderWidth: '1px'}}>
-                <MarketRecap/>
+                <MarketRecap />
             </div>
         </div>
     );
