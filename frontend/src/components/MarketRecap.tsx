@@ -40,12 +40,14 @@ function MarketRecap(props: MarketRecapProps) {
 
                 <span style={{fontSize: 13, color: '#7a94cc8f'}}>4H Market Sequence Structure</span>
                 <div style={{display: 'flex', justifyContent: 'space-between', backgroundColor: 'lightgray', padding: '5px 15px', marginTop: '10px', borderRadius: '5px'}}>
-                {props.marketSequence.map((point, index) => (
+                { props.marketSequence.length > 0 ? 
+                (props.marketSequence.map(  (point, index) => (
                     <div key={index} className={`card ${point.isSwept ? 'swept' : 'active'}`} style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
                         <span className="type" style={{fontSize: 13, color: '#111827'}}>{point.type}</span>
                         <span className="price" style={{fontSize: 13, color: '#111827'}}>{point.price}</span>
-                    </div>
-                ))}
+                        <span className="hover-text">{point.isSwept ? 'Swept' : 'Active'}</span>
+                    </div> )
+                )) : <span style={{fontSize: 13, color: '#7a94cc8f'}}>No data available</span>  } 
                 </div>
 
             </div>

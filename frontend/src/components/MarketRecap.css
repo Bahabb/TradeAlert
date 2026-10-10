@@ -41,31 +41,57 @@
 
 
 .card {
+  position: relative;
   min-width: 60px;
   transition: all 0.2s ease;
 }
 
-/* 🟢 Active Level (Not Swept Yet) */
-.card.active {
-  border-top: 3px solid #089981; /* Glowing green top accent */
+.hover-text {
+  position: absolute;
+  bottom: -5px;
+  left: -10%;
+  transform: translateX(-50%);
+
+  font-size: 10px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #0c121d;
+  padding: 1px 4px;
+  border-radius: 4px;
+  white-space: nowrap;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.card:hover .hover-text {
   opacity: 1;
 }
-
-.card.active .type {
-  font-weight: 600;
+.card:hover {
+  transform: scale(1.05);
+  z-index: 1;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
+
+.card.active {
+  border-top: 3px solid #089981; 
+  opacity: 1;
+}
+.card.active .type,
 .card.active .price {
   font-weight: 700;
 }
 
-/* ⚪ Swept Level (Dimmable / De-emphasized) */
+
 .card.swept {
-  border-top: 3px solid #787b86; /* Neutral grey top accent */
-  opacity: 0.45; /* Dims the card so traders focus on active levels */
+  border-top: 3px solid #787b86; 
+  opacity: 0.6; 
 }
 
-.card.swept .label,
+.card.swept .type,
 .card.swept .price {
   color: #787b86;
 }
