@@ -11,7 +11,11 @@ function App() {
     return(
         <div className="main-container" style={{ display: 'grid', gridTemplateColumns: '1fr 360px', height: '100vh', width: '100vw' }}>
                 <AlertFeed alerts={alerts} />
-                <MarketRecap />
+                <MarketRecap marketSequence={[{ type: 'HH', price: 100, isSwept: false }, 
+                    { type: 'HL', price: 105, isSwept: true },
+                    { type: 'LH', price: 95, isSwept: false },
+                    { type: 'LL', price: 90, isSwept: true },
+                    ]} />
         </div>
     );
 
