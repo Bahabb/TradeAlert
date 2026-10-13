@@ -39,7 +39,7 @@ function MarketRecap(props: MarketRecapProps) {
                 <Divider />
 
                 <span style={{fontSize: 15, color: '#5a76b5'}}>4H Market Sequence Structure</span>
-                <div style={{display: 'flex', justifyContent: 'space-between', backgroundColor: 'lightgray', padding: '10px 15px', marginTop: '10px', marginBottom: '15px', borderRadius: '5px'}}>
+                <div style={{display: 'flex', justifyContent: 'space-between', backgroundColor: 'lightgray', padding: '10px 15px', marginTop: '10px', borderRadius: '5px'}}>
                     { props.marketSequence.length > 0 ? 
                     (props.marketSequence.map(  (point, index) => (
                         <div key={index} className={`card ${point.isSwept ? 'swept' : 'active'}`} style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
@@ -51,7 +51,7 @@ function MarketRecap(props: MarketRecapProps) {
                 </div>
                 
                 <Divider />
-
+                <div style={{fontStyle: 'bold', fontSize: '13px', color: '#5a76b5', marginBottom: '10px'}}>DEALING RANGE</div>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', alignItems: 'flex-end' }}>
                     
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
@@ -70,10 +70,23 @@ function MarketRecap(props: MarketRecapProps) {
                     <span style={{ fontSize: '11px', fontWeight: '600', color: '#00e87a' }}>DISCOUNT</span>
                     <span style={{ fontSize: '13px', color: '#ffffff', fontFamily: 'monospace', marginTop: '2px' }}>1.0781</span>
                     </div>
+                </div>
+                <div style={{ height: 10, background: 'linear-gradient(90deg, rgba(0,232,122,0.25) 0%, rgba(0,232,122,0.06) 50%, rgba(255,45,85,0.06) 50%, rgba(255,45,85,0.25) 100%)', borderRadius: '5px'}}></div>
 
+                <Divider />
+                
+                <div style={{fontStyle: 'bold', fontSize: '13px', color: '#5a76b5', marginBottom: '10px'}}>DRAW ON LIQUIDITY</div>
+                <div style={{display: 'flex', justifyContent: 'space-between', backgroundColor: 'lightgray', padding: '10px', borderRadius: '5px'}}>
+                    <div style={{display: 'flex', flexDirection: 'column'}}>
+                        <span style={{fontSize: '13px', color: '#111827'}}>Prior Week High</span>
+                        <span style={{fontSize: '13px', color: '#111827'}}>1.000</span>
+                    </div>
+                    <div style={{backgroundColor: 'green', padding: '9px', borderRadius: '5px'}}>
+                        <span style={{fontSize: '13px', fontFamily: 'monospace', fontWeight: 'bold', color: '#ffffff'}}>ABOVE</span>
+                    </div>
                 </div>
 
-                <div style={{ height: 10, background: 'linear-gradient(90deg, rgba(0,232,122,0.25) 0%, rgba(0,232,122,0.06) 50%, rgba(255,45,85,0.06) 50%, rgba(255,45,85,0.25) 100%)', borderRadius: '5px' }}></div>
+                <Divider />
             </div>
         </div>
         </> 
