@@ -1,5 +1,6 @@
 import { AlertItemType } from "../types";
 import AlertItem from "./AlertItem";
+import styles from "./styles/AlertFeed.module.css";
 
 interface AlertFeedProps {
     alerts: AlertItemType[];
@@ -7,19 +8,19 @@ interface AlertFeedProps {
 
 function AlertFeed(props: AlertFeedProps) { 
     return (
-        <div className="alert-feed">    
-            <div className="alert-feed-header">
-                <h2 className="alert-feed-title">ICT Alert Feed</h2>
+        <div className={styles.alertFeed}>   
+            <div className={styles.alertFeedHeader}>
+                <h2 className={styles.alertFeedTitle}>ICT Alert Feed</h2>
             </div>
             {props.alerts.length === 0 ? (
-                <p className="alert-feed-empty">No alerts yet.</p>
+                <p className={styles.alertFeedEmpty}>No alerts recorded yet.</p>
             ) : (
                 props.alerts.map((item) => (
                     <AlertItem key={item.id} alert={item} />
                 ))
             )}
         </div>
-    )
+    );
 }
 
 export default AlertFeed;

@@ -1,0 +1,47 @@
+.card {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  padding: 14px 16px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+}
+
+.eyebrow {
+  font-family: var(--font-data, monospace);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  color: var(--color-text-muted);
+  margin-bottom: 6px;
+}
+
+.heroRow {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.heroText {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--color-bull);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.strengthText {
+  font-family: var(--font-data, monospace);
+  font-size: 10px;
+  color: var(--color-bull);
+  opacity: 0.85;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.sessionRow {
+  font-family: var(--font-data, monospace);
+  font-size: 9px;
+  color: var(--color-text-muted);
+  margin-top: 8px;
+}

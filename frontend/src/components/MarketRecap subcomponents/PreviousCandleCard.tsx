@@ -1,27 +1,29 @@
+import styles from '../styles/PreviousCandleCard.module.css';
+
 export function PreviousCandleCard() {
   return (
-    <div>
-      <span style={{ fontSize: '13px', fontWeight: 'bold', color: '#5a76b5', marginBottom: '10px', display: 'block' }}>PREVIOUS 4H CANDLE</span> 
-      <article style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'lightgray', padding: '10px', borderRadius: '5px' }}>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }} className='card'>
-          <span style={{ fontSize: '13px', color: '#111827' }}>DIR</span>
-          <span style={{ fontSize: '13px', color: '#111827' }}>BULL</span>
+    <div className={styles.container}>
+      <span className={styles.title}>PREVIOUS 4H CANDLE</span> 
+      <article className={styles.grid}>
+        <div className={styles.metricBox}>
+          <div className={styles.metricLabel}>DIR</div>
+          <div className={styles.metricValueBull}>BULL</div>
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }} className='card'>
-          <span style={{ fontSize: '13px', color: '#111827' }}>Open</span>
-          <span style={{ fontSize: '13px', color: '#111827', fontFamily: 'monospace' }}>1.0000</span>
+        <div className={styles.metricBox}>
+          <div className={styles.metricLabel}>Open</div>
+          <div className={styles.metricValueMain}>1.0000</div>
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }} className='card'>
-          <span style={{ fontSize: '13px', color: '#111827' }}>Close</span>
-          <span style={{ fontSize: '13px', color: '#111827', fontFamily: 'monospace' }}>1.0000</span>
+        <div className={styles.metricBox}>
+          <div className={styles.metricLabel}>Close</div>
+          <div className={styles.metricValueMain}>1.0000</div>
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }} className='card'>
-          <span style={{ fontSize: '13px', color: '#111827' }}>High</span>
-          <span style={{ fontSize: '13px', color: '#111827', fontFamily: 'monospace' }}>1.0000</span>
+        <div className={styles.metricBox}>
+          <div className={styles.metricLabel}>High</div>
+          <div className={styles.metricValueMain}>1.0000</div>
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }} className='card'>
-          <span style={{ fontSize: '13px', color: '#111827' }}>Low</span>
-          <span style={{ fontSize: '13px', color: '#111827', fontFamily: 'monospace' }}>1.0000</span>
+        <div className={styles.metricBox}>
+          <div className={styles.metricLabel}>Low</div>
+          <div className={styles.metricValueMain}>1.0000</div>
         </div>
       </article>
     </div>

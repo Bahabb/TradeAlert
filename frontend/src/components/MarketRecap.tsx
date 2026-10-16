@@ -1,4 +1,4 @@
-import './MarketRecap.css';
+import styles from './styles/MarketRecap.module.css';
 import { MarketStructurePoint } from '../types';
 import { Divider } from './MarketRecap subcomponents/Divider';
 import { DailyBiasCard } from './MarketRecap subcomponents/DailyBiasCard';
@@ -17,39 +17,28 @@ interface MarketRecapProps {
 
 export default function MarketRecap(props: MarketRecapProps) {
     return (
-        <section style={{ display: 'flex', flexDirection: 'column', borderColor: 'white', borderStyle: 'solid', borderWidth: '1px' }}>
-            
-            {/* Header */}
-            <header className="recap-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <h2 className="recap-title">4H Market Recap</h2>
-                <span className="recap-badge">Live</span>
+        <section>
+            <header className={styles.header}>
+                <h2 className={styles.title}>4H Market Recap</h2>
+                <span className={styles.badge}>Live</span>
             </header>
 
-            {/* Content Area */}
-            <div style={{ padding: 15, display: 'flex', flexDirection: 'column' }}>
+            <div className={styles.contentArea}>
                 <DailyBiasCard />
-                
                 <Divider />
                 <MarketSequence marketSequence={props.marketSequence} />
-                
                 <Divider />
                 <DealingRange />
-                
                 <Divider />
                 <KeyLevels />
-                
                 <Divider />
                 <DrawOnLiquidityCard />
-
                 <Divider />
                 <FairValueGapCard />
-
                 <Divider />
                 <OrderBlockCard />
-
                 <Divider />
                 <PreviousCandleCard />
-
                 <Divider />
                 <ConfluenceMatrixCard />
             </div>

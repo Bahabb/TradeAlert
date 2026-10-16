@@ -1,0 +1,88 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  margin-bottom: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--color-bg-panel);
+  border: 1px solid var(--color-border);
+  padding: 10px 14px;
+  border-radius: 6px;
+  list-style: none;
+  margin: 0;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.typeText {
+  font-family: var(--font-data, monospace);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-text-main);
+}
+
+.priceText {
+  font-family: var(--font-data, monospace);
+  font-size: 10px;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.card {
+  position: relative;
+  min-width: 50px;
+  transition: all 0.2s ease;
+}
+
+.hoverText {
+  position: absolute;
+  bottom: -5px;
+  left: -10%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #0c121d;
+  padding: 1px 4px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.card:hover .hoverText {
+  opacity: 1;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  z-index: 1;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.active {
+  border-top: 3px solid var(--color-bull); 
+  opacity: 1;
+}
+
+.swept {
+  border-top: 3px solid #787b86; 
+  opacity: 0.6; 
+}

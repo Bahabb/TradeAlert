@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  margin-bottom: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: flex-end;
+}
+
+.colLeft { display: flex; flex-direction: column; align-items: flex-start; }
+.colCenter { display: flex; flex-direction: column; align-items: center; }
+.colRight { display: flex; flex-direction: column; align-items: flex-end; }
+
+.labelPremium { font-size: 10px; font-weight: 600; color: var(--color-bear); letter-spacing: 0.05em; }
+.labelEq { font-size: 10px; font-weight: 600; color: var(--color-text-muted); letter-spacing: 0.05em; }
+.labelDiscount { font-size: 10px; font-weight: 600; color: var(--color-bull); letter-spacing: 0.05em; }
+
+.value {
+  font-size: 12px;
+  color: var(--color-text-main);
+  font-family: var(--font-data, monospace);
+  margin-top: 2px;
+}
+
+.meterBar {
+  height: 8px;
+  background: linear-gradient(90deg, rgba(0,232,122,0.25) 0%, rgba(0,232,122,0.06) 50%, rgba(255,45,85,0.06) 50%, rgba(255,45,85,0.25) 100%);
+  border-radius: 4px;
+  margin-top: 8px;
+}

@@ -1,15 +1,15 @@
+import styles from '../styles/OrderBlockCard.module.css';
+
 export function OrderBlockCard() {
   return (
-    <div>
-      <div style={{ fontSize: '13px', fontWeight: 'bold', color: '#5a76b5', marginBottom: '10px' }}>ORDER BLOCK (4H)</div>
-      <article style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'lightgray', padding: '10px', borderRadius: '5px' }}>
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-          <span style={{ fontSize: '13px', color: '#111827' }}>Bullish OB</span>
-          <span style={{ fontSize: '13px', fontFamily: 'monospace', color: '#111827' }}>1.0750 - 1.0770</span>
+    <div className={styles.container}>
+      <div className={styles.title}>ORDER BLOCK (4H)</div>
+      <article className={styles.card}>
+        <div>
+          <div className={styles.label}>Bullish OB</div>
+          <div className={styles.range}>1.0750 - 1.0770</div>
         </div>
-        <div style={{ backgroundColor: 'green', padding: '9px', borderRadius: '5px' }}>
-          <span style={{ fontSize: '13px', fontFamily: 'monospace', fontWeight: 'bold', color: '#ffffff' }}>TESTED</span>
-        </div>
+        <div className={styles.badge}>TESTED</div>
       </article>
     </div>
   );
