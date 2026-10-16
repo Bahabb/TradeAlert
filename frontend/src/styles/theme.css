@@ -1,0 +1,22 @@
+
+
+:root {
+  /* backgrounds */
+  --color-bg-app: #0b131e;
+  --color-bg-panel: #111b2b;
+  --color-bg-card: #161f30;
+  
+  
+  --color-text-main: #d8e8f4;    
+  --color-text-muted: #8aa4c4;   
+  --color-border: rgba(255, 255, 255, 0.08);
+
+  
+  --color-bull: #00e87a;         
+  --color-bear: #ff2d55;         
+  --color-warn: #ff9a00;         
+  --color-cyan: #00d0f5;         
+
+  
+  --font-data: 'JetBrains Mono', monospace;
+}

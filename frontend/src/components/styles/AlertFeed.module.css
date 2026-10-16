@@ -1,0 +1,37 @@
+.alertFeed {
+  background-color: var(--color-bg-panel, #111b2b);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.alertFeedHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
+  padding-bottom: 10px;
+}
+
+.alertFeedTitle {
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--font-data, 'JetBrains Mono', monospace);
+  color: var(--color-text-main, #d8e8f4);
+  letter-spacing: 0.05em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.alertFeedEmpty {
+  color: var(--color-text-muted, #8aa4c4);
+  font-size: 13px;
+  font-family: var(--font-data, 'JetBrains Mono', monospace);
+  text-align: center;
+  padding: 20px 0;
+  margin: 0;
+}
