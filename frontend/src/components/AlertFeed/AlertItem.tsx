@@ -1,5 +1,5 @@
 import { AlertItemType } from "../../types";
-import styles from "./styles/AlertItem.module.css";
+import styles from "./AlertItem.module.css";
 
 interface AlertItemProps {
     alert: AlertItemType;

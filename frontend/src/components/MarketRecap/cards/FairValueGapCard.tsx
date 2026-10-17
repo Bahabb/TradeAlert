@@ -1,4 +1,4 @@
-import styles from '../styles/FairValueGapCard.module.css';
+import styles from './FairValueGapCard.module.css';
 
 export function FairValueGapCard() {
   return (

@@ -1,4 +1,4 @@
-import styles from '../styles/ConfluenceMatrixCard.module.css';
+import styles from './ConfluenceMatrixCard.module.css';
 
 export function ConfluenceMatrixCard() {
   return (

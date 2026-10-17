@@ -1,4 +1,4 @@
-import styles from '../styles/DailyBiasCard.module.css';
+import styles from './DailyBiasCard.module.css';
 
 export function DailyBiasCard() {
   return (

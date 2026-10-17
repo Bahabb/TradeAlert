@@ -1,4 +1,4 @@
-import styles from '../styles/KeyLevels.module.css';
+import styles from './KeyLevels.module.css';
 
 export function KeyLevels() {
   return (

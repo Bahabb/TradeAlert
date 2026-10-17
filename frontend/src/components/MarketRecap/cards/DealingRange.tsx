@@ -1,4 +1,4 @@
-import styles from '../styles/DealingRange.module.css';
+import styles from './DealingRange.module.css';
 
 export function DealingRange() {
   return (

@@ -1,6 +1,6 @@
 import { AlertItemType } from "../../types";
 import AlertItem from "./AlertItem";
-import styles from "./styles/AlertFeed.module.css";
+import styles from "./AlertFeed.module.css";
 
 interface AlertFeedProps {
     alerts: AlertItemType[];

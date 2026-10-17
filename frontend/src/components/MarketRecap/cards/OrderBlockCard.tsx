@@ -1,4 +1,4 @@
-import styles from '../styles/OrderBlockCard.module.css';
+import styles from './OrderBlockCard.module.css';
 
 export function OrderBlockCard() {
   return (

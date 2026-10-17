@@ -1,4 +1,4 @@
-import styles from '../styles/PreviousCandleCard.module.css';
+import styles from './PreviousCandleCard.module.css';
 
 export function PreviousCandleCard() {
   return (

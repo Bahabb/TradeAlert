@@ -1,5 +1,5 @@
-import styles from '../styles/MarketSequence.module.css';
-import { MarketStructurePoint } from '../../types';
+import styles from './MarketSequence.module.css';
+import { MarketStructurePoint } from '../../../types';
 
 interface MarketSequenceProps {
   marketSequence: Array<MarketStructurePoint>;

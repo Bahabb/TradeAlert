@@ -1,4 +1,4 @@
-import styles from '../styles/DrawOnLiquidityCard.module.css';
+import styles from './DrawOnLiquidityCard.module.css';
 
 export function DrawOnLiquidityCard() {
   return (
