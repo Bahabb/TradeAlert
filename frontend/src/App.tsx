@@ -1,4 +1,4 @@
-import AlertFeed from './components/AlertFeed.tsx';
+import AlertFeed from './components/AlertFeed/AlertFeed.tsx';
 import MarketRecap from './components/MarketRecap.tsx';
 import useAlertStream from './hooks/useAlertStream.ts';
 import './styles/theme.css';

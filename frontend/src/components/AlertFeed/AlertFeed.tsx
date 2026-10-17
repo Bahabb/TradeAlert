@@ -1,4 +1,4 @@
-import { AlertItemType } from "../types";
+import { AlertItemType } from "../../types";
 import AlertItem from "./AlertItem";
 import styles from "./styles/AlertFeed.module.css";
 
