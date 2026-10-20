@@ -1,7 +1,7 @@
 {
   "name": "shared",
   "version": "1.0.0",
-  "main": "src/types.ts",
+  "main": "types.ts",
   "dependencies": {
     "zod": "^4.6.7"
   }
