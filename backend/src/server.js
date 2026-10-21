@@ -19,7 +19,7 @@ io.on("connection", (socket) => {
 
     const cachedRecap = getLatestRecap();
     if (cachedRecap) {
-        io.emit("botRecap", [cachedRecap]);
+        socket.emit("botRecap", [cachedRecap]);
         console.log("Sent cached 4H recap to frontend.");
     }
 
