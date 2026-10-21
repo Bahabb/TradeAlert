@@ -1,9 +1,9 @@
-const http = require("http");
-const { Server } = require("socket.io");
+import http from "http";
+import { Server } from "socket.io";
 
-const app = require("./app");
-const { port } = require("./config/env");
-const { getLatestRecap } = require("./store/recapStore");
+import app from "./app";
+import { port } from "./config/env";
+import { getLatestRecap } from "./store/recapStore";
 
 const httpServer = http.createServer(app);
 const io = new Server(httpServer, {  

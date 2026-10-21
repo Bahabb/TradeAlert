@@ -1,4 +1,4 @@
-export const validateData = (schema) => {
+const validateData = (schema) => {
   return (req, res, next) => {
     const result = schema.safeParse(req.body);
 
@@ -14,3 +14,5 @@ export const validateData = (schema) => {
     next();
   };
 };
+
+export default validateData;

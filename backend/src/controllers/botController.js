@@ -1,7 +1,7 @@
 import { MarketRecapSchema } from 'shared'
-import { setLatestRecap } from '../store/recapStore';
+import { setLatestRecap } from '../store/recapStore.js';
 
-const receiveAlert = (req, res) => { 
+export const receiveAlert = (req, res) => { 
     
   const validatedAlert = req.body;
   const websocketSendResult = websocketSend(req, validatedAlert, "botAlert");
@@ -49,4 +49,3 @@ const websocketSend = (req, data, event) => {
       return false;
   }
 }
-module.exports = { receiveAlert, receiveRecap};
