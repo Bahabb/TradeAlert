@@ -1,8 +1,9 @@
-const http = require("http");
-const { Server } = require("socket.io");
+import http from "http";
+import { Server } from "socket.io";
 
-const app = require("./app");
-const { port } = require("./config/env");
+import app from "./app";
+import { port } from "./config/env";
+import { getLatestRecap } from "./store/recapStore";
 
 const httpServer = http.createServer(app);
 const io = new Server(httpServer, {  
@@ -16,10 +17,15 @@ app.set("io", io);
 io.on("connection", (socket) => {  
     console.log("Socket client connected:", socket.id);
 
+    const cachedRecap = getLatestRecap();
+    if (cachedRecap) {
+        socket.emit("botRecap", [cachedRecap]);
+        console.log("Sent cached 4H recap to frontend.");
+    }
 
     socket.on("disconnect", () => {  
     console.log("Socket client disconnected:", socket.id);
-});
+    });
 });
 
 

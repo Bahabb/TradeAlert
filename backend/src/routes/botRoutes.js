@@ -1,9 +1,11 @@
-const express = require("express");
+import express from "express";
+import { receiveAlert, receiveRecap } from "../controllers/botController.js";
+import { MarketRecapSchema } from "shared";
+import validateData from "../middleware/validateDTO.js";
+
 const router = express.Router();
 
-const { receiveAlert } = require("../controllers/botController");
+router.post("/alert", validateData(MarketRecapSchema), receiveAlert);
+router.post("/recap", validateData(MarketRecapSchema), receiveRecap);
 
-
-router.post("/alert", receiveAlert);
-
-module.exports = router;
+export default router;

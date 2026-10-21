@@ -1,27 +1,51 @@
+import { MarketRecapSchema } from 'shared'
+import { setLatestRecap } from '../store/recapStore.js';
 
-
-// Needs validating the TradingAlert DTO later by a model.
-const receiveAlert = (req, res) => { 
-    const alertData = req.body;
-
-    if (!alertData || Object.keys(alertData).length === 0) {
-        return res.status(400).json({ message: "Alert data is required" });
-    }
-
-    // Here I'll use botModel to process the data received and validate it before using it.
-
-    console.log("Received alert:", alertData);
-
+export const receiveAlert = (req, res) => { 
     
-    const io = req.app.get("io");
-    if (io) {
-        io.emit("botAlert", [alertData]); 
-    } else {
-        console.error("Socket.IO instance not found in app context. Couldn't send alert to frontend.");
-    }
+  const validatedAlert = req.body;
+  const websocketSendResult = websocketSend(req, validatedAlert, "botAlert");
 
-    // Send a response back to the client
-    res.status(200).json({ message: "Alert received successfully", data: alertData });
+  if (websocketSendResult) {
+    res.status(200).json({ 
+    message: "Alert received & sent successfully", 
+    data: validatedAlert,
+    });
+  } else {
+      return res.status(400).json({
+      message: "Alert received & cached, but failed to send to frontend",
+      data: validatedAlert
+    })
+  }
 }
 
-module.exports = { receiveAlert, };
+export const receiveRecap = (req, res) => {
+ 
+  const validatedRecap = req.body;
+  const websocketSendResult = websocketSend(req, validatedRecap, "botRecap");
+
+  setLatestRecap(validatedRecap);
+
+  if (websocketSendResult) {
+    return res.status(200).json({ 
+      message: "Recap received & sent successfully", 
+      data: validatedRecap
+    });
+  } else {
+    return res.status(400).json({
+      message: "Recap received & cached, but failed to send to frontend",
+      data: validatedRecap
+    })
+  }
+};
+
+const websocketSend = (req, data, event) => {
+  const io = req.app.get("io");
+  if (io) {
+      io.emit(event, [data]);
+      return true;
+  } else {
+      console.error("Socket.IO instance not found in app context. Couldn't send to frontend.");
+      return false;
+  }
+}
