@@ -1,5 +1,5 @@
 import { useSocketContext } from "../contexts/SocketContext";
-import { AlertItemType } from "../types";
+import { AlertItemType } from "shared";
 import { useEffect, useState } from "react";
 
 function useAlertStream() {
