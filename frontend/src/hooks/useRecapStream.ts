@@ -14,6 +14,10 @@ function useRecapStream() {
         };
 
         socket.on("botRecap", handleRecap);
+
+        return () => {
+            socket.off("botRecap", handleRecap);
+        }
     }, [socket]);
 
     return currRecap;
