@@ -1,5 +1,5 @@
 import styles from './MarketRecap.module.css';
-import { MarketStructurePoint } from 'shared';
+import { MarketRecapData } from 'shared';
 import { Divider } from './cards/Divider';
 import { DailyBiasCard } from './cards/DailyBiasCard';
 import { MarketSequence } from './cards/MarketSequence';
@@ -10,23 +10,25 @@ import { FairValueGapCard } from './cards/FairValueGapCard';
 import { OrderBlockCard } from './cards/OrderBlockCard';
 import { PreviousCandleCard } from './cards/PreviousCandleCard';
 import { ConfluenceMatrixCard } from './cards/ConfluenceMatrixCard';
+import Spinner from '../Spinner';
+import LoadingSkeleton from './cards/LoadingSkeleton';
 
 interface MarketRecapProps {
-    marketSequence: Array<MarketStructurePoint>;
+    marketRecap: MarketRecapData;
 }
 
 export default function MarketRecap(props: MarketRecapProps) {
-    return (
+    return props.marketRecap != null ?
+    (
         <section>
             <header className={styles.header}>
                 <h2 className={styles.title}>4H Market Recap</h2>
                 <span className={styles.badge}>Live</span>
             </header>
-
             <div className={styles.contentArea}>
                 <DailyBiasCard />
                 <Divider />
-                <MarketSequence marketSequence={props.marketSequence} />
+                <MarketSequence marketSequence={props.marketRecap.marketSequence} />
                 <Divider />
                 <DealingRange />
                 <Divider />
@@ -43,5 +45,16 @@ export default function MarketRecap(props: MarketRecapProps) {
                 <ConfluenceMatrixCard />
             </div>
         </section>
+    )
+    : (
+        <>
+        <section>
+            <header className={styles.header}>
+                <h2 className={styles.title}>4H Market Recap</h2>
+                <span className={styles.badge}>Live</span>
+            </header>
+            <LoadingSkeleton />
+        </section>
+        </>
     );
 }
