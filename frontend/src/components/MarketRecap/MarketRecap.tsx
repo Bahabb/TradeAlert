@@ -51,7 +51,7 @@ export default function MarketRecap(props: MarketRecapProps) {
         <section>
             <header className={styles.header}>
                 <h2 className={styles.title}>4H Market Recap</h2>
-                <span className={styles.badge}> <Spinner /> Live</span>
+                <span className={styles.badge}>Live</span>
             </header>
             <LoadingSkeleton />
         </section>

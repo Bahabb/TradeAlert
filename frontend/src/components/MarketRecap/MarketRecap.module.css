@@ -27,7 +27,6 @@
 }
 
 .badge {
-  display: inline-flex;
   font-family: var(--font-data, monospace);
   font-size: 11px;
   font-weight: 600;
@@ -36,9 +35,6 @@
   padding: 2px 8px;
   border-radius: 4px;
   letter-spacing: 0.08em;
-
-  align-items: center;
-  gap: 10px;
 }
 
 .contentArea {
