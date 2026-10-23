@@ -10,9 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "shared": "*",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
+    "shared": "*",
     "socket.io-client": "^4.8.3",
     "zod": "^4.6.7"
   },
