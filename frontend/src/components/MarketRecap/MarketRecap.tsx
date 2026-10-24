@@ -10,15 +10,14 @@ import { FairValueGapCard } from './cards/FairValueGapCard';
 import { OrderBlockCard } from './cards/OrderBlockCard';
 import { PreviousCandleCard } from './cards/PreviousCandleCard';
 import { ConfluenceMatrixCard } from './cards/ConfluenceMatrixCard';
-import Spinner from '../Spinner';
+
 import LoadingSkeleton from './cards/LoadingSkeleton';
+import useRecapStream from '@/hooks/useRecapStream';
 
-interface MarketRecapProps {
-    marketRecap: MarketRecapData;
-}
 
-export default function MarketRecap(props: MarketRecapProps) {
-    return props.marketRecap != null ?
+export default function MarketRecap() {
+    const recap = useRecapStream();
+    return recap != null ?
     (
         <section>
             <header className={styles.header}>
@@ -26,13 +25,13 @@ export default function MarketRecap(props: MarketRecapProps) {
                 <span className={styles.badge}>Live</span>
             </header>
             <div className={styles.contentArea}>
-                <DailyBiasCard />
+                <DailyBiasCard bias={recap.dailyBias} activeSession={recap.activeSession} nextKillZone={recap.nextKillZone}/>
                 <Divider />
-                <MarketSequence marketSequence={props.marketRecap.marketSequence} />
+                <MarketSequence marketSequence={recap.marketSequence} />
                 <Divider />
-                <DealingRange />
+                <DealingRange range={recap.dealingRange}/>
                 <Divider />
-                <KeyLevels />
+                <KeyLevels levels={recap.keyLevels}/>
                 <Divider />
                 <DrawOnLiquidityCard />
                 <Divider />
