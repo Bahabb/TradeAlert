@@ -113,7 +113,7 @@ static char* create_json_recap(void) {
     snprintf(json_payload, buffer_size,
         "{"
           "\"dailyBias\": {"
-            "\"direction\": \"bearish\","
+            "\"direction\": \"bullish\","
             "\"strength\": \"strong\""
           "},"
           "\"activeSession\": \"London\","

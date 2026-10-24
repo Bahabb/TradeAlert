@@ -1,5 +1,4 @@
 import styles from './MarketRecap.module.css';
-import { MarketRecapData } from 'shared';
 import { Divider } from './cards/Divider';
 import { DailyBiasCard } from './cards/DailyBiasCard';
 import { MarketSequence } from './cards/MarketSequence';
