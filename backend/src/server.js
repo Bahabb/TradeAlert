@@ -1,9 +1,9 @@
 import http from "http";
 import { Server } from "socket.io";
 
-import app from "./app";
-import { port } from "./config/env";
-import { getLatestRecap } from "./store/recapStore";
+import app from "./app.js";
+import { port } from "./config/env.js";
+import { getLatestRecap } from "./store/recapStore.js";
 
 const httpServer = http.createServer(app);
 const io = new Server(httpServer, {  
