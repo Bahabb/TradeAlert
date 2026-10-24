@@ -12,7 +12,7 @@ import { PreviousCandleCard } from './cards/PreviousCandleCard';
 import { ConfluenceMatrixCard } from './cards/ConfluenceMatrixCard';
 
 import LoadingSkeleton from './cards/LoadingSkeleton';
-import useRecapStream from '@/hooks/useRecapStream';
+import useRecapStream from '../../hooks/useRecapStream';
 
 
 export default function MarketRecap() {
