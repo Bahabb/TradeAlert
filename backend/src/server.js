@@ -1,9 +1,9 @@
 import http from "http";
 import { Server } from "socket.io";
 
-import app from "./app";
-import { port } from "./config/env";
-import { getLatestRecap } from "./store/recapStore";
+import app from "./app.js";
+import { port } from "./config/env.js";
+import { getLatestRecap } from "./store/recapStore.js";
 
 const httpServer = http.createServer(app);
 const io = new Server(httpServer, {  
@@ -19,7 +19,7 @@ io.on("connection", (socket) => {
 
     const cachedRecap = getLatestRecap();
     if (cachedRecap) {
-        socket.emit("botRecap", [cachedRecap]);
+        socket.emit("botRecap", cachedRecap);
         console.log("Sent cached 4H recap to frontend.");
     }
 

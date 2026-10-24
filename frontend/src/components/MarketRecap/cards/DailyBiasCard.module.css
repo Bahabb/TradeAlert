@@ -7,6 +7,21 @@
   flex-direction: column;
 }
 
+.cardBullish {
+  border-left-color: var(--color-bull);
+  background: linear-gradient(135deg, rgba(0, 232, 122, 0.07) 0%, var(--color-bg-card, #161f30) 70%);
+}
+
+.cardBearish {
+  border-left-color: var(--color-bear);
+  background: linear-gradient(135deg, rgba(255, 45, 85, 0.07) 0%, var(--color-bg-card, #161f30) 70%);
+}
+
+.cardNeutral {
+  border-left-color: var(--color-warn);
+  background: linear-gradient(135deg, rgba(255, 154, 0, 0.07) 0%, var(--color-bg-card, #161f30) 70%);
+}
+
 .eyebrow {
   font-family: var(--font-data, monospace);
   font-size: 9px;
@@ -24,16 +39,26 @@
 .heroText {
   font-size: 26px;
   font-weight: 700;
-  color: var(--color-bull);
   letter-spacing: -0.02em;
   line-height: 1;
   text-transform: uppercase;
 }
 
+.bearish {
+  color: var(--color-bear);
+}
+
+.bullish {
+  color: var(--color-bull);
+}
+
+.neutral {
+  color: var(--color-warn);
+}
+
 .strengthText {
   font-family: var(--font-data, monospace);
   font-size: 10px;
-  color: var(--color-bull);
   opacity: 0.85;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -43,5 +68,4 @@
   font-family: var(--font-data, monospace);
   font-size: 9px;
   color: var(--color-text-muted);
-  margin-top: 8px;
 }

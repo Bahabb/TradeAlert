@@ -42,7 +42,7 @@ export const receiveRecap = (req, res) => {
 const websocketSend = (req, data, event) => {
   const io = req.app.get("io");
   if (io) {
-      io.emit(event, [data]);
+      io.emit(event, data);
       return true;
   } else {
       console.error("Socket.IO instance not found in app context. Couldn't send to frontend.");
