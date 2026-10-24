@@ -13,7 +13,7 @@ int main(void) {
 
     const char *url_alert = "http://localhost:5000/api/bot/alert";
     const char* url_recap = "http://localhost:5000/api/bot/recap"; // URL to send the POST request to
-    
+
     while (!exit) { 
         CURL* curl;
         CURLcode result;
@@ -113,7 +113,7 @@ static char* create_json_recap(void) {
     snprintf(json_payload, buffer_size,
         "{"
           "\"dailyBias\": {"
-            "\"direction\": \"bullish\","
+            "\"direction\": \"bearish\","
             "\"strength\": \"strong\""
           "},"
           "\"activeSession\": \"London\","

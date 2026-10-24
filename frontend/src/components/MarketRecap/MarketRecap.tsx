@@ -33,15 +33,15 @@ export default function MarketRecap() {
                 <Divider />
                 <KeyLevels levels={recap.keyLevels}/>
                 <Divider />
-                <DrawOnLiquidityCard />
+                <DrawOnLiquidityCard draw={recap.drawOnLiquidity}/>
                 <Divider />
-                <FairValueGapCard />
+                <FairValueGapCard fvg={recap.fairValueGaps[0]}/>
                 <Divider />
-                <OrderBlockCard />
+                <OrderBlockCard orderBlock={recap.orderBlocks[0]}/>
                 <Divider />
-                <PreviousCandleCard />
+                <PreviousCandleCard prevCandle={recap.previousCandle}/>
                 <Divider />
-                <ConfluenceMatrixCard />
+                <ConfluenceMatrixCard matrix={recap.confluenceMatrix}/>
             </div>
         </section>
     )

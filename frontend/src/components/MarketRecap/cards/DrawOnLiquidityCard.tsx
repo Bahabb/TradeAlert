@@ -1,15 +1,19 @@
 import styles from './DrawOnLiquidityCard.module.css';
+import type { DrawOnLiquidity } from 'shared';
 
-export function DrawOnLiquidityCard() {
+interface DrawOnLiquidityCardProps {
+  draw: DrawOnLiquidity;
+}
+export function DrawOnLiquidityCard({draw}: DrawOnLiquidityCardProps) {
   return (
     <div className={styles.container}>
       <div className={styles.title}>DRAW ON LIQUIDITY</div>
       <article className={styles.card}>
         <div>
-          <div className={styles.label}>Prior Week High</div>
-          <div className={styles.price}>1.000</div>
+          <div className={styles.label}>{draw.targetName}</div>
+          <div className={styles.price}>{draw.price}</div>
         </div>
-        <div className={styles.badge}>ABOVE</div>
+        <div className={styles.badge}>{draw.status}</div>
       </article>
     </div>
   );
