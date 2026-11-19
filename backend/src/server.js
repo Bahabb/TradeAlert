@@ -2,13 +2,13 @@ import http from "http";
 import { Server } from "socket.io";
 
 import app from "./app.js";
-import { port } from "./config/env.js";
+import { port, reactUrl } from "./config/env.js";
 import { getLatestRecap } from "./store/recapStore.js";
 
 const httpServer = http.createServer(app);
 const io = new Server(httpServer, {  
     cors: {    
-        origin: "http://localhost:5173",  // React app URL
+        origin: reactUrl, 
     },
 });
 

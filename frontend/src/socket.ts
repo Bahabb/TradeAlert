@@ -1,7 +1,12 @@
 import { io } from "socket.io-client";
 
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
-const socket = io("http://localhost:5000");
+if (!backendUrl) {
+  throw new Error("VITE_BACKEND_URL is not set. Add it to frontend/.env");
+}
+
+const socket = io(backendUrl);
 
 
 export default socket
