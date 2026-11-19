@@ -1,15 +1,31 @@
 import express from "express";
 const app = express();
-app.use(express.json());
-
 import botRoutes from "./routes/botRoutes.js";
 
-app.router.get("/health", (req, res) => {
+import { corsOrigins } from "./config/env.js";
+import cors from "cors";
+const corsOptions = {
+  origin(origin, callback) {
+    if (!origin || corsOrigins.includes(origin)) { 
+      return callback(null, true);
+    }
+    return callback(new Error(`Origin not allowed by CORS: ${origin}`));
+  },
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
+app.use(express.json());
+
+
+
+app.get("/health", (req, res) => {
     res.status(200).json({
     status: "ok",
     uptime: Math.floor(process.uptime()),
   });
 });
+
 
 app.use("/api/bot", botRoutes);
 

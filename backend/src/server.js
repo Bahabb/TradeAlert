@@ -1,29 +1,16 @@
 import http from "http";
 import { Server } from "socket.io";
 
-import cors from "cors";
 import app from "./app.js";
-import { port, reactUrl } from "./config/env.js";
+import { port, reactUrl } from "./config/env.js"; 
 import { getLatestRecap } from "./store/recapStore.js";
 
 const httpServer = http.createServer(app);
 const io = new Server(httpServer, {  
     cors: {    
-        origin: reactUrl, 
+        origin: reactUrl
     },
 });
-
-const corsOptions = {
-  origin(origin, callback) {
-    if (!origin || env.CORS_ORIGINS.includes(origin)) {
-      return callback(null, true);
-    }
-    return callback(new Error(`Origin not allowed by CORS: ${origin}`));
-  },
-  credentials: true,
-};
-
-app.use(cors(corsOptions));
 
 app.set("io", io);
 

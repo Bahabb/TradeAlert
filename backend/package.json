@@ -13,9 +13,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "shared": "*",
+    "cors": "^2.8.6",
     "dotenv": "^18.0.1",
     "express": "^5.2.1",
+    "shared": "*",
     "socket.io": "^4.8.3",
     "zod": "^4.6.7"
   },
