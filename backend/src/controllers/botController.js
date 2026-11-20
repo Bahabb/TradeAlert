@@ -1,4 +1,3 @@
-import { MarketRecapSchema } from 'shared'
 import { setLatestRecap } from '../store/recapStore.js';
 
 export const receiveAlert = (req, res) => { 

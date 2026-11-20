@@ -7,13 +7,13 @@ function useAlertStream() {
     const [alerts, setAlerts] = useState<AlertItemType[]>([]);
 
     useEffect( () => {
-        function handleAlert(incomingAlerts: AlertItemType[]) {
+        function handleAlert(incomingAlerts: AlertItemType) {
             console.log('Received botAlert event with data:', incomingAlerts);
 
             setAlerts(
                 (previousAlerts) => [        
                     ...previousAlerts,        
-                    ...incomingAlerts,
+                    incomingAlerts,
                 ]);
         }
 

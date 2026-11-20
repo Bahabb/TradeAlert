@@ -18,8 +18,8 @@ int main(void) {
         CURL* curl;
         CURLcode result;
 
-        // char *json_data = create_json_alert("This timestamp was automatically grabbed. This is an alert from CBOT"); // ALERT_ITEM
-        char *json_data = create_json_recap();
+        char *json_data = create_json_alert("This timestamp was automatically grabbed. This is an alert from CBOT"); // ALERT_ITEM
+        //char *json_data = create_json_recap();
 
         if (!json_data) {
             fprintf(stderr, "Failed to create JSON recap payload\n");
@@ -40,7 +40,7 @@ int main(void) {
         headers = curl_slist_append(headers, "Content-Type: application/json"); // add custom header for JSON content
         headers = curl_slist_append(headers, "Accept: application/json"); // add custom header for accepting JSON response
 
-        curl_easy_setopt(curl, CURLOPT_URL, url_recap); // we set the URL option
+        curl_easy_setopt(curl, CURLOPT_URL, url_alert); // we set the URL option
         curl_easy_setopt(curl, CURLOPT_POSTFIELDS, json_data); // we set the POST data
         curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers); // we set the custom headers
         
@@ -93,7 +93,7 @@ static char* create_json_alert(const char* message) {
     }
 
     // Populate the JSON payload
-    snprintf(json_payload, 256, "{\"timestamp\": \"%04d-%02d-%02dT%02d:%02d:%02dZ\", \"message\": \"%s\"}", 
+    snprintf(json_payload, 256, "{\"id\": \"1\", \"timestamp\": \"%04d-%02d-%02dT%02d:%02d:%02dZ\", \"message\": \"%s\"}", 
              current_time->tm_year + 1900, current_time->tm_mon + 1, current_time->tm_mday,
              current_time->tm_hour, current_time->tm_min, current_time->tm_sec, message);
 
