@@ -4,7 +4,7 @@ const validateDTO = (schema) => {
 
     if (!result.success) {
       return res.status(400).json({
-        error: "BACKEND: Validation failed",
+        error: "Validation failed",
         details: result.error.format(),
       });
     }
